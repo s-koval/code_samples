@@ -1,0 +1,185 @@
+@import 'src/styles/settings/settings.scss';
+
+
+.input-wrapper {
+  position: relative;
+  margin-top: rem(32px);
+
+  border: rem(4px) solid color(primary, .04);
+  border-radius: rem(40px);
+
+  width: 100%;
+  height: rem(60px);
+  padding: 0 rem(66px) 0 rem(20px);
+
+  background-color: color(white);
+
+  @include media ('>=lphone') {
+    transition-duration: 0.3s;
+    transition-property: border, color;
+  }
+
+  &:focus {
+    border: rem(4px) solid color(third);
+  }
+
+  @include media ('>=lphone') {
+    &:hover {
+      border: rem(4px) solid color(third, .5);
+      .search-input {
+        &::placeholder {
+          color: color(primary, 1) !important;
+        }
+
+        &:-ms-input-placeholder {
+          color: color(primary, 1) !important;
+        }
+
+        &::-ms-input-placeholder {
+          color: color(primary, 1) !important;
+        }
+      }
+    }
+  }
+
+  @include media ('>=lphone') {
+    width: rem(352px);
+    margin-top: 0;
+  }
+}
+
+.search-input {
+  height: 100%;
+  width: 98%;
+  font-family: font(primary), sans-serif;
+  font-size: rem(16px);
+  border: none;
+  outline: none;
+  padding: 0 rem(14px) 0 0;
+  background-color: color(white);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin-bottom: 0 !important;
+
+  &[type="search"]::-webkit-search-decoration,
+  &[type="search"]::-webkit-search-cancel-button,
+  &[type="search"]::-webkit-search-results-button,
+  &[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &[type=search]::-ms-clear {
+    display: none;
+    width : 0;
+    height: 0;
+  }
+  &[type=search]::-ms-reveal {
+    display: none;
+    width : 0;
+    height: 0
+  };
+
+  &::placeholder {
+    color: color(primary, 0.8) !important;
+  }
+
+  &:-ms-input-placeholder {
+    color: color(primary, 0.8) !important;
+  }
+
+  &::-ms-input-placeholder {
+    color: color(primary, 0.8) !important;
+  }
+
+  &:focus {
+    border: none !important;
+    outline: none !important;
+  }
+
+  @include media ('<lphone') {
+    width: 100%;
+  }
+}
+
+.search-wrapper {
+  &-focused {
+    border: rem(4px) solid color(third) !important;
+
+    .search-input {
+
+      &::placeholder {
+        color: color(primary, 1) !important;
+      }
+
+      &:-ms-input-placeholder {
+        color: color(primary, 1) !important;
+      }
+
+      &::-ms-input-placeholder {
+        color: color(primary, 1) !important;
+      }
+    }
+  }
+
+  &-tab-focused {
+    outline-color: Highlight;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: rem(1px);
+  }
+}
+
+.search-icon {
+  position: absolute;
+  right: rem(4px);
+  top: rem(4px);
+
+  border: unset;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: color(third, .1);
+
+  width: rem(44px);
+  height: rem(44px);
+
+  &-hovered {
+    background-color: color(third, .3);
+  }
+
+  &-focused {
+    background-color: color(third, .5);
+  }
+}
+
+.clear-button {
+  cursor: pointer;
+  position: absolute;
+  right: rem(56px);
+  top: rem(14px);
+
+  border: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  color: color(darkRed);
+  background-color: color(darkRed, .1);
+  width: rem(24px);
+  height: rem(24px);
+
+  padding-bottom: rem(2px);
+
+  span {
+    svg {
+      width: rem(10px);
+      height: rem(10px);
+    }
+  }
+}

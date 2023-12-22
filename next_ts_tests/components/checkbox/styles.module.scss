@@ -1,0 +1,42 @@
+@import '/src/styles/settings/settings.scss';
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+
+  &.disabled {
+    pointer-events: none;
+    input {
+      background-color: color(primary, .05);
+      border-color: color(primary, .3);
+
+      &:after {
+        border-color: color(primary, .3);
+      }
+    }
+  }
+}
+
+.checkbox-text {
+  font-size: rem(16px);
+  line-height: rem(24px);
+  font-family: font(primary), sans-serif;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: rem(16px);
+  font-family: font(primary), sans-serif;
+  line-height: rem(24px);
+
+  input {
+    margin-bottom: auto;
+    cursor: pointer;
+  }
+}

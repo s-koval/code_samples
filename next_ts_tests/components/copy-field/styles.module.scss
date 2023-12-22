@@ -1,0 +1,33 @@
+@import 'src/styles/settings/settings';
+
+.label-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: rem(8px);
+
+  .label {
+    width: 100%;
+    font-size: rem(12px);
+    margin: 0;
+    font-family: font(arial), sans-serif;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: rem(12px);
+  max-width: unset !important;
+  border-radius: rem(8px);
+
+  text-overflow: ellipsis;
+
+  background-color: color(primary, 0.05) !important;
+
+  border: none !important;
+  outline: none !important;
+
+  &.copied {
+    background-color: color(darkGreen, 0.1) !important;
+  }
+}
